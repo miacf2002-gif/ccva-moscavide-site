@@ -29,6 +29,20 @@ body {
 }
 
 @media (max-width: 767px) {
+  .contributions-section {
+    min-height: 720px !important;
+  }
+
+  .contributions-section > div {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .contributions-section > div > div:last-child {
+    min-height: 300px !important;
+    padding: 28px 24px !important;
+  }
+
   .desktop-nav {
     display: none !important;
   }

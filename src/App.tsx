@@ -510,10 +510,12 @@ function Contribuicoes() {
   const [metodo, setMetodo] = useState<'mbway' | 'iban' | 'presencial'>('mbway')
 
   return (
-    <section id="contribuicoes" style={{
+    <section id="contribuicoes" className="contributions-section" style={{
       background: `linear-gradient(135deg, rgba(232, 247, 251, 0.78), rgba(255,255,255,0.9)), url(${contribuirBg}) center/cover no-repeat`,
       padding: '80px 0',
       position: 'relative',
+      minHeight: 640,
+      boxSizing: 'border-box',
     }}>
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 24px', position: 'relative', zIndex: 1 }}>
         <h2 style={{ fontFamily: font, fontWeight: 900, fontStyle: 'italic', fontSize: 'clamp(22px, 4vw, 40px)', color: '#1F2937', marginBottom: 8 }}>
@@ -544,7 +546,7 @@ function Contribuicoes() {
           ))}
         </div>
 
-        <div style={{ background: '#fff', borderRadius: 24, padding: '36px 40px', boxShadow: '0 1px 3px rgba(0,0,0,0.06)', border: '1px solid #F3F4F6' }}>
+        <div style={{ background: '#fff', borderRadius: 24, padding: '36px 40px', minHeight: 230, boxSizing: 'border-box', boxShadow: '0 1px 3px rgba(0,0,0,0.06)', border: '1px solid #F3F4F6' }}>
           {metodo === 'mbway' && (
             <div>
               <p style={{ fontFamily: font, fontWeight: 700, fontSize: 11, color: TEAL, letterSpacing: 3, textTransform: 'uppercase', marginBottom: 20 }}>MB WAY</p>
