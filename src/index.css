@@ -23,6 +23,35 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.mobile-menu-toggle,
+.mobile-menu {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .mobile-menu-toggle {
+    display: flex !important;
+  }
+
+  .mobile-menu {
+    display: block !important;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    box-shadow: 0 12px 24px rgba(13, 34, 51, 0.18);
+  }
+
+  header > div:first-child {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--teal); border-radius: 4px; }

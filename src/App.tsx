@@ -70,7 +70,7 @@ function Navbar() {
         </button>
 
         {/* Desktop nav */}
-        <nav style={{ display: 'flex', gap: 4 }} className="hidden md:flex">
+        <nav className="desktop-nav" style={{ display: 'flex', gap: 4 }}>
           {links.map(l => (
             <button key={l.href} onClick={() => go(l.href)}
               style={{ fontFamily: font, fontSize: 13, fontWeight: 600, color: '#ffffff', background: 'none', border: 'none', cursor: 'pointer', padding: '8px 12px', borderRadius: 8, transition: 'color 0.2s', textShadow: '0 1px 2px rgba(0,0,0,0.25)' }}
@@ -83,7 +83,7 @@ function Navbar() {
         </nav>
 
         {/* Hamburger */}
-        <button className="md:hidden" onClick={() => setOpen(!open)}
+        <button className="mobile-menu-toggle" onClick={() => setOpen(!open)} aria-label={open ? 'Fechar menu' : 'Abrir menu'} aria-expanded={open}
           style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 8, display: 'flex', flexDirection: 'column', gap: 5 }}>
           {[0, 1, 2].map(i => (
             <span key={i} style={{
@@ -97,7 +97,7 @@ function Navbar() {
 
       {/* Mobile dropdown */}
       {open && (
-        <div className="md:hidden" style={{ background: '#fff', borderTop: '1px solid #F3F4F6', padding: '8px 0' }}>
+        <div className="mobile-menu" style={{ background: '#fff', borderTop: '1px solid #F3F4F6', padding: '8px 0' }}>
           {links.map(l => (
             <button key={l.href} onClick={() => go(l.href)}
               style={{ display: 'block', width: '100%', textAlign: 'left', fontFamily: font, fontWeight: 600, fontSize: 14, color: '#374151', background: 'none', border: 'none', cursor: 'pointer', padding: '12px 24px' }}>
